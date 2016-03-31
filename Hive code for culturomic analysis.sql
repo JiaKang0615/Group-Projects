@@ -1,57 +1,4 @@
-CREATE EXTERNAL TABLE chinese_1grams (
- gram string,
- year int,
- occurrences bigint,
- pages bigint,
- books bigint
-)
-ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
-STORED AS SEQUENCEFILE
-LOCATION 's3://datasets.elasticmapreduce/ngrams/books/20090715/chi-sim-all/1gram/';
-
-CREATE EXTERNAL TABLE english_2grams (
- gram string,
- year int,
- occurrences bigint,
- pages bigint,
- books bigint
-)
-ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
-STORED AS SEQUENCEFILE
-LOCATION 's3://datasets.elasticmapreduce/ngrams/books/20090715/eng-all/2gram/';
-
-CREATE EXTERNAL TABLE english_1grams (
- gram string,
- year int,
- occurrences bigint,
- pages bigint,
- books bigint
-)
-ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
-STORED AS SEQUENCEFILE
-LOCATION 's3://datasets.elasticmapreduce/ngrams/books/20090715/eng-all/1gram/';
-
-CREATE EXTERNAL TABLE us_english_1grams (
- gram string,
- year int,
- occurrences bigint,
- pages bigint,
- books bigint
-)
-ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
-STORED AS SEQUENCEFILE
-LOCATION 's3://datasets.elasticmapreduce/ngrams/books/20090715/eng-us-all/1gram/';
-
-INSERT OVERWRITE TABLE us_normalized_1gram
-SELECT
- lower(gram),
- year,
- occurrences
-FROM
- us_english_1grams
-WHERE
- gram REGEXP "^[A-Za-z+'-]+$"; 
-
+#example script of creating tables
 CREATE EXTERNAL TABLE uk_english_1grams (
  gram string,
  year int,
@@ -63,6 +10,7 @@ ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
 STORED AS SEQUENCEFILE
 LOCATION 's3://datasets.elasticmapreduce/ngrams/books/20090715/eng-gb-all/1gram/';
 
+#example script of cleaning string data and write to new table
 INSERT OVERWRITE TABLE uk_normalized_1gram
 SELECT
  lower(gram),
@@ -91,18 +39,7 @@ WHERE
  gram REGEXP "^[A-Za-z+'-]+\ [A-Za-z+'-]+$";
 
 
-#us-us ed-t
-create TABLE us_t row format delimited fields terminated by ',' 
-STORED as textfile
-location 's3://msba6330-google-ngram/output/' AS
-select * from us_normalized_1gram where gram in ("learned","learnt","builded","built","bended","bent","burned","burnt","lended","lent",
-"rended","rent","sended","sent","smell","smelt","spelled","spelt","spilled","spilt","spolied","spolit");
-
-create TABLE uk_t row format delimited fields terminated by ',' 
-STORED as textfile
-location 's3://msba6330-google-ngram/output/' AS
-select * from uk_normalized_1gram where gram in ("learned","learnt","builded","built","bended","bent","burned","burnt","lended","lent",
-"rended","rent","sended","sent","smell","smelt","spelled","spelt","spilled","spilt","spolied","spolit");
+#filtering data into new tables
 create TABLE regularity row format delimited fields terminated by ',' 
 STORED as textfile
 location 's3://msba6330-google-ngram/output/' AS
@@ -110,7 +47,7 @@ select * from normalized_1gram where gram in ("chid","chided","strived","strove"
 "drove","snuck","sneaked","stick","stucked","come","came");
 
 
-
+#compare the occurrences of words by decades
 create TABLE decade_data_wordnet row format delimited fields terminated by ',' 
 STORED as textfile
 location 's3://msba6330-google-ngram/output/' AS
