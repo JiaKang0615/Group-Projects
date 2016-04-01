@@ -10,7 +10,7 @@ These are some of the projects I worked in group during the MSBA program and som
 
   * To do sentiment analysis, [IBM's Waston API](https://github.com/JiaKang0615/Group-Projects/blob/master/Hillary%20Clinton%20email/Hillary_email_API.py) was called. It turns out that on Monday, emails tend to be more negative than positive whereas on Friday, positive emails increase.
 
-  * I detected the [most frequent contacts](https://github.com/JiaKang0615/Group-Projects/blob/master/Hillary%20Clinton%20email/Hillary_Sender_Receiver.R) Hillary emailed with, and visualized the interactions with this chord gram.
+  * I found the [most frequent contacts](https://github.com/JiaKang0615/Group-Projects/blob/master/Hillary%20Clinton%20email/Hillary_Sender_Receiver.R) Hillary emailed with, and visualized the interactions with this chord gram.
   
    <img src="https://github.com/JiaKang0615/Group-Projects/blob/master/Hillary%20Clinton%20email/Chord%20gram_fin.jpg" width="380">
 
@@ -30,7 +30,7 @@ These are some of the projects I worked in group during the MSBA program and som
 ### 5. Design Entity–Relationship Model for ESPN Cricket
   Using open source data, I concolidated 11 highly normalized data files into a data warehouse with star schema. After designing the ER Model, I created tables and their relationship, then performed data ETL task to load the data from source files to SQL Server. 
 
-  <img src="https://github.com/JiaKang0615/Group-Projects/blob/master/Design%20ER%20Model.png" width="850">
+  <img src="https://github.com/JiaKang0615/Group-Projects/blob/master/Design%20ER%20Model.png" width="750">
 
 ### 6. Analysis of Unemployment Rate and Campus Crime Rate
   The project statistically evaluates the likelihood impact of unemployment rate on the campus crime rates. It adopted a probabilistic method and built hypothesis testings to measure the effect of unemployment rate of the community on campus crime rate. [The analysis](https://github.com/JiaKang0615/Group-Projects/blob/master/Unemployment%20vs.%20campus%20crime%20rate.py) was done using Python.
