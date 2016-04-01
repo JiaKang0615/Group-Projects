@@ -6,7 +6,7 @@ The following projects were completed during the MS-Business Analytisc program a
   
   Using **topic modeling, IBM's Waston API** and **R**, the exploration consists of three parts: a)How topics trending overtime b)How sentiment of emails change on weekdays c)Frequent contacts of Hillary Clinton and network analysis.
   
-  * As a result of [topic modeling](https://github.com/JiaKang0615/Group-Projects/blob/master/Hillary%20Clinton%20email/Hillary_LDA_Topic.py) using **LDA**, 7 topics were identified, and their trend overtime is plotted here.
+  * As a result of [topic modeling](https://github.com/JiaKang0615/Group-Projects/blob/master/Hillary%20Clinton%20email/Hillary_LDA_Topic.py) using LDA, 7 topics were identified, and their trend overtime is plotted here.
   
   <img src="https://github.com/JiaKang0615/Group-Projects/blob/master/Hillary%20Clinton%20email/Hillary%20topic%20trending.PNG" width="500">
 
@@ -20,7 +20,7 @@ The following projects were completed during the MS-Business Analytisc program a
 ### 2. SEO strategy for AirFrance
   This project optimized the bidding strategy on Search Engine using the data from AirFrance Case Study. 
   
-  Using **Excel, JMP**, I built **OLS models** for each keyword on each advertisement platform to predict a reasonable rank as target position. The KPIs used to measure advertisement and bidding strategy effect include *Click Through Rate, Conversion Rate, Net Revenue and ROA*.
+  Using **Excel, JMP**, I built OLS models for each keyword on each advertisement platform to predict a reasonable rank as target position. The KPIs used to measure advertisement and bidding strategy effect include *Click Through Rate, Conversion Rate, Net Revenue and ROA*.
   As a result, according to the analysis, the ROA increased **40%**.
 
 
@@ -37,7 +37,7 @@ The following projects were completed during the MS-Business Analytisc program a
 ### 5. Design Entity–Relationship Model for ESPN Cricket
   This project redesigned a normalized database into data warehouse. 
   
-  I consolidated 11 highly normalized data files into a data warehouse with star schema structure. After designing the **ER Model**, I used **SQL** to creat tables and their relationship, then performed **data ETL** task to load the data from source files to SQL Server. 
+  I consolidated 11 highly normalized data files into a data warehouse with star schema structure. After designing the **ER Model**, I used **SQL** to creat tables and their relationship, then performed data ETL task to load the data from source files to SQL Server. 
 
   <img src="https://github.com/JiaKang0615/Group-Projects/blob/master/Design%20ER%20Model.png" width="850">
 
