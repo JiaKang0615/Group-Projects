@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>中国的旅游业</title>
+	<script src="js/echarts/doc/asset/js/esl/esl.js"></script>
+	<script src="js/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/s.css">
+</head>
+<body>
+	<div class="__window">
+		<div class="__subject">小伙伴们，一起来玩耍吧</div>
+		<div class="__subheadding">中国的出入境旅游业发展状况</div>
+		<hr>
+		<div class="__paragraph_header">中国拥有着13亿人口，还有数不胜数的名山大川、名胜古迹以及神秘古老的文化。随着经济发展，小伙伴们有了大把的时间和充裕的金钱，再加上各种以“旅行”为主题的心灵鸡汤的广泛传播，中国成为世界最主要的旅游市场之一。在国内旅游资源不断吸引外国游客的同时，小伙伴们也越来越喜欢走出国门，领略异域风情，中国的出入境旅游业近年来迅速发展</div>
+		<div class="__headding">一、“要致富，先修路”</div>
+		<table class="__content">
+			<tbody>
+				<tr>
+					<td class="__paragraph">旅游业要想蓬勃发展，“先修路”绝对少不了。中国的铁路公路网、民用航线、内河航运等交通基础建设近年来不断加快着速度。除了刺激了钢铁、水泥等工业发展，在经济危机的关键时刻凭空创造出4万亿市场，把通货膨胀水平不断拉高以外，确实方便了小伙伴们的出行</td>
+					<td class="__chartwrapper">
+						<div class="__chart" id="chart_1"></div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="__headding">二、我们来自五湖四海</div>
+		<table class="__content">
+			<tbody>
+				<tr>
+					<td class="__chartwrapper">
+						<div class="__chart" id="chart_2">
+							<div class="_chartpanel">
+								<div class="_chartpanel" id="chart_panel" onmousemove="chart_2_follow(event)">
+									<div class="_chart_numround" id="numround_Af" style="width:30px;height:30px;left:300px;top:210px"></div>
+									<div class="_chart_numround" id="numround_As" style="width:180px;height:180px;left:380px;top:60px"></div>
+									<div class="_chart_numround" id="numround_Eu" style="width:105px;height:105px;left:280px;top:80px"></div>
+									<div class="_chart_numround" id="numround_Am" style="width:80px;height:80px;left:80px;top:160px"></div>
+									<div class="_chart_numround" id="numround_Oc" style="width:40px;height:40px;left:480px;top:260px"></div>
+									<div id="chart_tooltip" style="display:none;left:0;top:0"></div>
+								</div>
+							</div>
+						</div>
+					</td>
+					<td class="__paragraph">来到我大好祖国玩耍的外国小伙伴们都来自哪里呢？亚洲国家的小伙伴占地理优势，其次是欧洲、美洲、大洋洲，非洲的小伙伴们最少</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="__headding">三、各国小伙伴最爱去哪？</div>
+		<table class="__content">
+			<tbody>
+				<tr>
+					<td class="__paragraph">根据2012年中国旅游业统计公报数据，广东的入境过夜旅客数量最多，远远超过其他所有省份，其中很大一部分应该是来自港澳和东南亚的小伙伴吧（单位：万人）</td>
+					<td class="__chartwrapper">
+						<div class="__chart" id="chart_3"></div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="__headding">四、小伙伴们也奔向世界各地呢</div>
+		<table class="__content">
+			<tbody>
+				<tr>
+					<td class="__chartwrapper">
+						<iframe height="400" width="600" frameborder="0" src="html/chart4.html"></iframe>
+					</td>
+					<td class="__paragraph">与入境游市场相比，小伙伴们出去玩的意愿显然更强烈。2012年，我国公民出境人数达到8318.27万人次，比上年增长18.4%。出境首站按人数排序，列前十位的国家和地区依次是：中国香港、中国澳门、韩国、中国台湾、泰国、日本、柬埔寨、美国、马来西亚和越南。（单位：万人）</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr style="margin-top:100px;">
+        <div class="__end">数据来源：Quandl&nbsp;&nbsp;2012年中国旅游业统计公报</div>
+		<div class="__end">©&nbsp;2013&nbsp;&nbsp;@康渣渣渣&nbsp;&nbsp;@石磊_Stone</div>
+	</div>
+	<script type="text/javascript">
+
+///////////////////////////////////// CHART 1 ///////////////////////////////////
+
+	    require.config({
+	        paths:{ 
+	            echarts:'./js/echarts/build/echarts-map',
+	            'echarts/chart/line' : './js/echarts/build/echarts-map',
+        	}
+    	});
+        require(
+	        [
+	            'echarts',
+	            'echarts/chart/line',
+	        ],
+	        function(ec) {
+	           var myChart = ec.init(document.getElementById('chart_1'));
+            var option = {
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:['在建铁路长度','公路里程','内河航道里程','民用航空航线里程']
+                },
+                dataZoom : {
+                	show:true,
+                	realtime:true,
+                	start: 20,
+                	end: 80,
+                },
+                calculable : true,
+                xAxis : [
+                    {
+                        type : 'category',
+                        data : ['1988年','1989年','1990年','1991年','1992年','1993年','1994年','1995年','1996年','1997年','1998年','1999年','2000年','2001年','2002年','2003年','2004年','2005年','2006年','2007年','2008年','2009年','2010年','2011年']
+                    }
+                ],
+                yAxis : [
+                    {
+                    	name : '里程数（10,000km）',
+                        type : 'value',
+                        scale: true,
+                        splitArea : {show : true}
+                    },
+                    {
+                        name : '里程数（10,000km）',
+                        type : 'value',
+                        scale: true,
+                        splitArea : {show : true}
+                    }
+                ],
+                series : [
+                    {
+                        name:'在建铁路长度',
+                        type:'line',
+                        symbolSize: 1,
+                        data:[5.6236,5.6996,5.7899,5.78,5.81,5.86,5.9,6.2389,6.49,6.6,6.64,6.74,6.87,7.0058,7.19,7.3,7.44,7.54376,7.70838,7.7965903,7.9687282,8.5517886,9.1178479,9.3249643]
+                    },
+                    {
+                        name:'公路里程',
+                        type:'line',
+                        yAxisIndex: 1,
+                        symbolSize: 1,
+                        data:[99.96,101.43,102.83,104.11,105.67,108.35,111.78,115.7,118.58,122.64,127.85,135.17,167.98,169.8,176.52,180.98,187.07,334.52,345.6999,358.3715,373.0164,386.0823,400.8229,410.6387]
+                    },
+                    {
+                        name:'内河航道里程',
+                        type:'line',
+                        symbolSize: 1,
+                        data:[10.94,10.9,10.92,10.97,10.97,11.02,11.0238,11.06,11.08,10.98,11.03,11.65,11.93,12.15,12.16,12.4,12.33,12.33,12.338827,12.349518,12.276349,12.3683,12.424178,12.4612]
+                    },
+                    {
+                        name:'民用航空航线里程',
+                        type:'line',
+                        yAxisIndex: 1,
+                        symbolSize: 1,
+                        data:[37.38,47.19,50.68,55.91,83.66,96.08,104.56,112.9,116.65,142.5,150.58,152.22,150.288,155.3596,163.77,174.95,204.94,199.85,211.3505,234.2961,246.184,234.5085,276.5147,349.0571]
+                    },
+
+                ]
+            };
+            
+            myChart.setOption(option);
+	        }
+        );
+	</script>
+	<script type="text/javascript">
+////////////////////////////////////// CHART 2 ///////////////////////////////////
+$(document).ready(function(){
+	var mousex;
+	var mousey;
+	var objx;
+	var objy;
+	var x;
+	var y;
+	chart_2_show();
+})
+function chart_2_follow(e)
+{
+	objx = $('#chart_panel').offset().left;
+	objy = $('#chart_panel').offset().top;
+	mousex = e.pageX;
+	mousey = e.pageY;
+	if (mousex >= objx && mousey >= objy) {
+		x = mousex - objx +10;
+		y = mousey - objy +10;
+	};
+	$('#chart_tooltip').css({'top':y,'left':x});
+}
+function chart_2_show()
+{
+	$('._chart_numround').hover(function(){
+		$('#chart_tooltip').css({'display':'block'});
+	},function(){
+		$('#chart_tooltip').css({'display':'none'});
+	});
+	$('#numround_Af').mouseover(function(){$('#chart_tooltip').html('非洲<br>52.49万')});
+	$('#numround_As').mouseover(function(){$('#chart_tooltip').html('亚洲<br>1664.8万')});
+	$('#numround_Eu').mouseover(function(){$('#chart_tooltip').html('欧洲<br>592.16万')});
+	$('#numround_Am').mouseover(function(){$('#chart_tooltip').html('美洲<br>317.95万')});
+	$('#numround_Oc').mouseover(function(){$('#chart_tooltip').html('大洋洲<br>91.49万')});
+}
+	</script>
+	<script type="text/javascript">
+
+//////////////////////////////////////// CHART 3 ///////////////////////////////////
+
+	    require.config({
+	        paths:{
+	            echarts:'./js/echarts/build/echarts-map',
+	            'echarts/chart/map' : './js/echarts/build/echarts-map',
+        	}
+    	});
+        require(
+	        [
+	            'echarts',
+	            'echarts/chart/map',
+	        ],
+	        function(ec) {
+	           var myChart = ec.init(document.getElementById('chart_3'));
+         	   var option = {
+                tooltip : {
+                    trigger: 'item',
+
+                },
+                toolbox: {
+                    show : false,
+                    feature : {
+                        mark : true,
+                        dataView : {readOnly: false},
+                        restore : true,
+                        saveAsImage : true
+                    }
+                },
+			    dataRange: {
+			        min: 0,
+			        orient: 'vertical',
+			        x: 'right', 
+			        y: 'center',
+			        textStyle: {color: '#f0efeb'},
+			        color:['#c00','#c00','#c00','#c00','#c00','#c90','#39c'],//颜色 
+			        calculable : true,
+			        max: 3489.43
+
+			    },
+    			calculable : false,
+                series : [
+                    {
+                        name:'',
+                        type:'map',
+                        mapType: 'china',
+                        data:[
+                        {
+                        	name: '北京',
+                        	value: 500.86,
+                        },
+                        {
+                        	name: '天津',
+                        	value: 73.75,
+                        },
+                        {
+                        	name: '重庆',
+                        	value: 224.28,
+                        },
+                        {
+                        	name: '上海',
+                        	value: 651.23,
+                        },
+                        {
+                        	name: '河北',
+                        	value: 129.32,
+                        },
+                        {
+                        	name: '陕西',
+                        	value: 335.24,
+                        },
+                        {
+                        	name: '辽宁',
+                        	value: 473.13,
+                        },
+                        {
+                        	name: '吉林',
+                        	value: 118.27,
+                        },
+                        {
+                        	name: '黑龙江',
+                        	value: 207.62,
+                        },
+                        {
+                        	name: '江苏',
+                        	value: 791.54,
+                        },
+                        {
+                        	name: '浙江',
+                        	value: 865.93,
+                        },
+                        {
+                        	name: '安徽',
+                        	value: 331.47,
+                        },
+                        {
+                        	name: '福建',
+                        	value: 493.67,
+                        },
+                        {
+                        	name: '江西',
+                        	value: 156.18,
+                        },
+                        {
+                        	name: '山东',
+                        	value: 469.91,
+                        },
+                        {
+                        	name: '河南',
+                        	value: 190.77,
+                        },
+                        {
+                        	name: '湖北',
+                        	value: 264.72,
+                        },
+                        {
+                        	name: '湖南',
+                        	value: 224.55,
+                        },
+                        {
+                        	name: '广东',
+                        	value: 3489.43,
+                        },
+                        {
+                        	name: '海南',
+                        	value: 81.58,
+                        },
+                        {
+                        	name: '四川',
+                        	value: 227.34,
+                        },
+                        {
+                        	name: '贵州',
+                        	value: 70.5,
+                        },
+                        {
+                        	name: '云南',
+                        	value: 457.84,
+                        },
+                        {
+                        	name: '山西',
+                        	value: 189.18,
+                        },
+                        {
+                        	name: '甘肃',
+                        	value: 10.2,
+                        },
+                        {
+                        	name: '青海',
+                        	value: 4.73,
+                        },
+                        {
+                        	name: '内蒙古',
+                        	value: 169.17,
+                        },
+                        {
+                        	name: '广西',
+                        	value: 350.27,
+                        },
+                        {
+                        	name: '宁夏',
+                        	value: 1.9,
+                        },
+                        {
+                        	name: '新疆',
+                        	value: 62.49,
+                        },
+                        {
+                        	name: '西藏',
+                        	value: 19.49,
+                        }
+                        ]
+                    },
+                ]
+         	   }
+         	   myChart.setOption(option);
+	        }
+        );
+	</script>
+</body>
+</html>
