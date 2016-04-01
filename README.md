@@ -4,7 +4,7 @@ The following projects were completed during the MS-Business Analytisc program a
 ### 1. Exploratory Analysis on Hillary Clinton's Email
   This project explores Hillary Clinton's released email contents and contacts. 
   
-  Using **topic modeling, IBM's Waston API** and **R**, the exploration consists of three parts: a)How topics trending overtime b)How sentiment of emails change on weekdays c)Frequent contacts of Hillary Clinton and network analysis.
+  Using **topic modeling, IBM's Waston API** and **R**, the exploration consists of three parts: a)How topics trending overtime b)How sentiment of emails change on weekdays c)Frequent contacts of Hillary Clinton and the interaction.
   
   * As a result of [topic modeling](https://github.com/JiaKang0615/Group-Projects/blob/master/Hillary%20Clinton%20email/Hillary_LDA_Topic.py) using LDA, 7 topics were identified, and their trend overtime is plotted here.
   
@@ -14,7 +14,7 @@ The following projects were completed during the MS-Business Analytisc program a
   
   <img src="https://github.com/JiaKang0615/Group-Projects/blob/master/Hillary%20Clinton%20email/Chord%20gram_fin.jpg" width="380">
 
-  * To do **sentiment analysis**, [IBM's Waston API](https://github.com/JiaKang0615/Group-Projects/blob/master/Hillary%20Clinton%20email/Hillary_email_API.py) was called. It turns out that on Monday, emails tend to be more negative than positive whereas on Friday, positive emails increase.
+  * To do **sentiment analysis**, [IBM's Waston API](https://github.com/JiaKang0615/Group-Projects/blob/master/Hillary%20Clinton%20email/Hillary_email_API.py) was called. It turns out that on Monday, emails tend to be more negative than positive, whereas on Friday, positive emails increase.
 
 
 ### 2. SEO strategy for AirFrance
@@ -27,7 +27,7 @@ The following projects were completed during the MS-Business Analytisc program a
 ### 3. Analysis of English Words Using Google N-Gram data
   This project analysis the change of English word usage following the method in the research paper [*Quantitative Analysis of Culture Using Millions of Digitized Books*](http://www.librarian.net/wp-content/uploads/science-googlelabs.pdf). 
   
-  I extracted [Google n-gram data](https://github.com/JiaKang0615/Group-Projects/blob/master/Google%20n-gram%20analysis/Hive%20code%20for%20culturomic%20analysis.sql) on **AWS public S3 bucket using Hive**, to analyze the [linguistic change of English words](https://github.com/JiaKang0615/Group-Projects/blob/master/Google%20n-gram%20analysis/processing_data_culturomic_analysis.R). I came to the same conclusion as the research paper, that the process of English verb past tense regularity is ongoing. 
+  I extracted [Google n-gram data](https://github.com/JiaKang0615/Group-Projects/blob/master/Google%20n-gram%20analysis/Hive%20code%20for%20culturomic%20analysis.sql) on **AWS** public S3 bucket using **Hive**, to analyze the [linguistic change of English words](https://github.com/JiaKang0615/Group-Projects/blob/master/Google%20n-gram%20analysis/processing_data_culturomic_analysis.R). I came to the same conclusion as the research paper, that the process of English verb past tense regularity is ongoing. 
 
 ### 4. Using D3.js to Build a Data Visualization Page
   I built a [data visualization page](https://github.com/JiaKang0615/Group-Projects/blob/master/Chinese%20Tourism%20Industry.html) to show intuitivelly how the Chinese Tourism Industry developed over years (the contents is in Chinese). The charts were written using **D3.js** package while the main frame of the page was in **HTML5 and CSS**.
