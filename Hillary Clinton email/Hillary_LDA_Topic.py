@@ -1,14 +1,10 @@
 import numpy as np
 import lda
 import lda.datasets
-import datetime
 import textmining
 import pandas as pd
 from pandas import Series, DataFrame
 import os
-import json
-import csv
-import numpy as np
 import nltk
 from nltk.corpus import stopwords
 
@@ -26,8 +22,7 @@ def process_text(inp_text, stop):
 
 t1 = datetime.datetime.now()
 print os.getcwd()
-#os.chdir("C:/Users/KaukabEnayet/Google Drive/Pyhton - project/Kaukab_working_directory/DATA/")
-os.chdir("C:/Users/KaukabEnayet/OneDrive/004_MSBA/002_Fall/002_Exploratory/Group Project/Final")
+os.chdir("C:/OneDrive/UMN/MSBA 6410 Exploratory/Group Project/Final")
 stop = stopwords.words('english')
 stop = stop + ['thursday' , 'friday','saturday','monday','tuesday', 'wednesday','call', 'calls' ,'schedule' ,'speech' , 'sid', 'update' , 'fyi' , 'today' , 'new' ,'tomorrow' ,'latest']
 stop = stop + ['autoreply' , 'thank' , 'called' ,'want' ,'asking' ,'see' ,'day' ,'plan' ,'end' , 'still' ,'also'] 
