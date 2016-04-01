@@ -32,14 +32,14 @@ The following projects were completed during the MS-Business Analytisc program a
 ### 4. Using D3.js to Build a Data Visualization Page
   I built a [data visualization page](https://github.com/JiaKang0615/Group-Projects/blob/master/Chinese%20Tourism%20Industry.html) to show intuitivelly how the Chinese Tourism Industry developed over years (the contents is in Chinese). The charts were written using **D3.js** package while the main frame of the page was in **HTML5 and CSS**.
 
-  <img src="https://github.com/JiaKang0615/Group-Projects/blob/master/D3js-chart.PNG" width="350">
+  <img src="https://github.com/JiaKang0615/Group-Projects/blob/master/D3js-chart.PNG" width="450">
 
 ### 5. Design Entity–Relationship Model for ESPN Cricket
   This project redesigned a normalized database into data warehouse. 
   
   I consolidated 11 highly normalized data files into a data warehouse with star schema structure. After designing the **ER Model**, I used **SQL** to creat tables and their relationship, then performed data ETL task to load the data from source files to SQL Server. 
 
-  <img src="https://github.com/JiaKang0615/Group-Projects/blob/master/Design%20ER%20Model.png" width="850">
+  <img src="https://github.com/JiaKang0615/Group-Projects/blob/master/Design%20ER%20Model.png" width="800">
 
 ### 6. Analysis of Unemployment Rate and Campus Crime Rate
   The project statistically evaluates the likelihood impact of unemployment rate on the campus crime rates. 
